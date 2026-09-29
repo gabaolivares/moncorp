@@ -1,4 +1,4 @@
-# 🏋️ MonCorp — Sistema de Monitoramento Corporal com IA
+# MonCorp — Sistema de Monitoramento Corporal com IA
 
 Sistema web em **PHP puro + MySQL** para monitoramento de saúde, com calculadora de IMC, histórico de avaliações físicas, biblioteca de treinos e assistente nutricional com Inteligência Artificial integrada à **API Groq**.
 
@@ -6,7 +6,7 @@ Sistema web em **PHP puro + MySQL** para monitoramento de saúde, com calculador
 
 ---
 
-## 📋 Índice
+# Índice
 
 - [Funcionalidades](#-funcionalidades)
 - [Tecnologias](#-tecnologias)
@@ -18,7 +18,7 @@ Sistema web em **PHP puro + MySQL** para monitoramento de saúde, com calculador
 
 ---
 
-## 🚀 Funcionalidades
+# Funcionalidades
 
 - **Calculadora de IMC** com classificação automática (abaixo do peso, normal, sobrepeso, obesidade)
 - **Histórico de avaliações físicas** com data, peso, altura e IMC
@@ -30,7 +30,7 @@ Sistema web em **PHP puro + MySQL** para monitoramento de saúde, com calculador
 
 ---
 
-## 🛠️ Tecnologias
+# Tecnologias
 
 | Camada | Tecnologia |
 |---|---|
@@ -42,7 +42,7 @@ Sistema web em **PHP puro + MySQL** para monitoramento de saúde, com calculador
 
 ---
 
-## 🔒 Segurança aplicada
+# Segurança aplicada
 
 Este projeto foi desenvolvido com foco em **segurança de aplicações web**, aplicando as seguintes boas práticas:
 
@@ -60,7 +60,7 @@ Este projeto foi desenvolvido com foco em **segurança de aplicações web**, ap
 
 ---
 
-## 📁 Estrutura do projeto
+# Estrutura do projeto
 
 ```
 moncorp/
@@ -92,7 +92,7 @@ moncorp/
 
 ---
 
-## ⚙️ Como rodar localmente
+# Como rodar localmente
 
 ### Pré-requisitos
 - PHP 8.3 ou superior
@@ -133,13 +133,13 @@ moncorp/
 
 ---
 
-## 📸 Screenshots
+# Screenshots
 
 > Em breve — prints das telas principais do sistema.
 
 ---
 
-## 👨‍💻 Autor
+# Autor
 
 **Gabriel Olivares**
 
@@ -150,7 +150,7 @@ moncorp/
 
 ---
 
-## 📄 Licença
+# Licença
 
 Este projeto está sob a licença **MIT** — consulte o arquivo [LICENSE](LICENSE) para mais detalhes.
 
