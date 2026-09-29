@@ -48,7 +48,7 @@ if (!function_exists('env')) {
 
     function env(string $chave, $padrao = null)
     {
-        carregar_env(__DIR__ . '/../.env');
+        carregar_env(__DIR__ . '/../.env.example');
 
         $valor = getenv($chave);
         if ($valor === false || $valor === '') {
