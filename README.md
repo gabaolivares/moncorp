@@ -133,12 +133,6 @@ moncorp/
 
 ---
 
-# Screenshots
-
-> Em breve — prints das telas principais do sistema.
-
----
-
 # Autor
 
 **Gabriel Olivares**
