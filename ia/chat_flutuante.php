@@ -3,9 +3,8 @@ if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
 
-// =========================================================
-// ENDPOINT DA IA (POST → JSON)
-// =========================================================
+date_default_timezone_set('America/Sao_Paulo');
+
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['pergunta'])) {
 
     while (ob_get_level()) ob_end_clean();
@@ -13,7 +12,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['pergunta'])) {
     header('Content-Type: application/json; charset=utf-8');
     header('X-Content-Type-Options: nosniff');
 
-    // Proteção de origem (CSRF leve)
     $origem = $_SERVER['HTTP_ORIGIN'] ?? '';
     $host_atual = ($_SERVER['HTTPS'] ?? 'off') === 'on' ? 'https://' : 'http://';
     $host_atual .= $_SERVER['HTTP_HOST'] ?? '';
@@ -172,10 +170,38 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['pergunta'])) {
         display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 10px rgba(15, 185, 177, 0.3);
     }
     .header-avatar svg { width: 22px; height: 22px; fill: #fff; }
-    .header-info { display: flex; flex-direction: column; }
+    .header-info { display: flex; flex-direction: column; flex-grow: 1; }
     .header-title { color: var(--mc-text-light); font-weight: 600; font-size: 15px; }
     .header-status { color: var(--mc-primary); font-size: 12px; display: flex; align-items: center; gap: 5px; font-weight: 500;}
     .status-dot { width: 8px; height: 8px; background: var(--mc-primary); border-radius: 50%; box-shadow: 0 0 8px var(--mc-primary);}
+
+    /* Botão X para fechar o chat */
+    .chat-close-btn {
+        background: rgba(255, 255, 255, 0.08);
+        border: none;
+        width: 34px;
+        height: 34px;
+        border-radius: 50%;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--mc-text-muted);
+        transition: all 0.25s ease;
+        flex-shrink: 0;
+    }
+    .chat-close-btn:hover {
+        background: rgba(255, 71, 87, 0.9);
+        color: #fff;
+        transform: rotate(90deg) scale(1.05);
+    }
+    .chat-close-btn svg {
+        width: 16px;
+        height: 16px;
+        stroke: currentColor;
+        stroke-width: 2.5;
+        stroke-linecap: round;
+    }
 
     .chat-history {
         padding: 20px; height: 350px; overflow-y: auto; display: flex; flex-direction: column; gap: 15px; scroll-behavior: smooth;
@@ -253,6 +279,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['pergunta'])) {
             <span class="header-title">IA MonCorp</span>
             <span class="header-status"><div class="status-dot"></div> Online</span>
         </div>
+
+        <button class="chat-close-btn" onclick="toggleChat()" aria-label="Fechar chat" title="Fechar chat">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M6 6L18 18M18 6L6 18" />
+            </svg>
+        </button>
     </div>
 
     <div class="chat-history" id="historicoChat"></div>
