@@ -16,6 +16,8 @@ mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
 try {
     $conexao = new mysqli($host, $usuario_bd, $senha_bd, $banco);
     $conexao->set_charset("utf8mb4");
+    date_default_timezone_set('America/Sao_Paulo');
+    $conexao->query("SET time_zone = '-03:00'");
 } catch (mysqli_sql_exception $e) {
     // Em produção, NUNCA exiba $e->getMessage() para o usuário final
     http_response_code(500);
