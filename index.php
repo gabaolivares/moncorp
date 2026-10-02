@@ -168,6 +168,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['peso']) && isset($_POS
                         <option value="" disabled selected>Selecione seu gênero</option>
                         <option value="Feminino" <?= (isset($_POST['genero']) && $_POST['genero'] == 'Feminino') ? 'selected' : ''; ?>>Feminino</option>
                         <option value="Masculino" <?= (isset($_POST['genero']) && $_POST['genero'] == 'Masculino') ? 'selected' : ''; ?>>Masculino</option>
+                        <option value="Masculino" <?= (isset($_POST['genero']) && $_POST['genero'] == 'Naoinformar') ? 'selected' : ''; ?>>Prefiro não informar</option>
                     </select>
                 </div>
 
